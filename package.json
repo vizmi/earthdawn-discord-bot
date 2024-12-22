@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "Earthdawn 4th Edition Discord tools bot",
   "main": "index.js",
-  "engines": {
-    "node": "22.12.0"
-  },
   "scripts": {
     "start": "node index.js",
     "deploy": "node deploy-commands.js",
