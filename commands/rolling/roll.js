@@ -40,6 +40,11 @@ const respond = (dice, rolls) => {
 	const total = rolls.reduce((acc, r) => { return acc + r }, 0);
 	resp += ' = ' + total;
 
+	// rule of ones
+	if (rolls.every(r => r == 1)) {
+		resp += ' ❌';
+	}
+
 	return resp;
 }
 
