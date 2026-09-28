@@ -12,7 +12,7 @@ test('execute reports the roundtrip latency', async () => {
 	const edits = [];
 	const interaction = {
 		createdTimestamp: 1000,
-		reply: async () => ({ createdTimestamp: 1042 }),
+		reply: async () => ({ resource: { message: { createdTimestamp: 1042 } } }),
 		editReply: (content) => { edits.push(content); },
 	};
 	await pingCommand.execute(interaction);

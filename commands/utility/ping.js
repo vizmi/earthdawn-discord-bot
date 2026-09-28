@@ -5,7 +5,7 @@ module.exports = {
 		.setName('ping')
 		.setDescription('Replies with roundtrip latency!'),
 	async execute(interaction) {
-		const sent = await interaction.reply({ content: 'Pinging...', fetchReply: true });
-		interaction.editReply(`Roundtrip latency: ${sent.createdTimestamp - interaction.createdTimestamp}ms`);
+		const { resource } = await interaction.reply({ content: 'Pinging...', withResponse: true });
+		interaction.editReply(`Roundtrip latency: ${resource.message.createdTimestamp - interaction.createdTimestamp}ms`);
 	},
 };
